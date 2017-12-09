@@ -51,8 +51,8 @@ sayItCallback()
 ```
 
 # How it works
-In short, SayWorker.cc is still a `Nan::AsyncWorker`, but instead of being passed a callback, . `v8::promise` is passed instead. This is then resolved in the `HandleOKCallback`.
+In short, [SayWorker.cc](https://github.com/dberesford/node-async-promises-addon-example/blob/master/SayWorker.cc) is still a `Nan::AsyncWorker` (as you would do with a [regular callback](https://github.com/dberesford/node-async-promises-addon-example/blob/master/SayWorkerCallback.cc)), but instead of being passed a callback, a `v8::promise` is [passed](https://github.com/dberesford/node-async-promises-addon-example/blob/1ab50a3734b5b8b95a3432030edff41f1b5f0048/SayWorker.cc#L4) instead. This is then resolved in the [`HandleOKCallback`](https://github.com/dberesford/node-async-promises-addon-example/blob/master/SayWorker.cc#L20).
 
 # N-API
 
-N-API is the successor to NaN for creating native node modules. N-API has first class support for promises: https://nodejs.org/api/n-api.html#n_api_promises
+[N-API](https://nodejs.org/api/n-api.html) is the successor to NaN for creating native node modules, and has first class support for promises: https://nodejs.org/api/n-api.html#n_api_promises
