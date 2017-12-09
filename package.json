@@ -1,0 +1,42 @@
+{
+  "author": {
+    "name": "Damian Beresford",
+    "email": "dberesford@gmail.com",
+    "url": "twitter.com/dberesford"
+  },
+  "name": "person-addon",
+  "description": "Basic node NaN promises example.",
+  "version": "1.7.1",
+  "homepage": "https://github.com/dberesford/TODO",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dberesford/TODO.git"
+  },
+  "dependencies": {
+    "nan": "2.8.0"
+  },
+  "devDependencies": {
+    "snazzy": "7.0.0",
+    "standard": "10.0.2",
+    "tap": "10.3.2"
+  },
+  "optionalDependencies": {},
+  "main": "person.js",
+  "scripts": {
+    "preuninstall": "rm -rf build/*",
+    "test": "standard | snazzy && tap test/*.test.js",
+    "install": "node-gyp rebuild",
+    "build": "node-gyp build"
+  },
+  "gypfile": true,
+  "contributors": [
+    {
+      "name": "Damian Beresford",
+      "email": "dberesford@gmail.com"
+    }
+  ],
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/dberesford/TODO"
+  }
+}

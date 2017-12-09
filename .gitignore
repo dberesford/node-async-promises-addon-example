@@ -1,0 +1,8 @@
+.lock-wscript
+build/
+node_modules/
+*~
+npm-debug.log
+.vscode
+crash.log
+.projectile
