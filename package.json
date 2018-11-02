@@ -18,7 +18,7 @@
   "devDependencies": {
     "snazzy": "7.0.0",
     "standard": "10.0.2",
-    "tap": "10.3.2"
+    "tap": "12.0.1"
   },
   "optionalDependencies": {},
   "main": "person.js",
