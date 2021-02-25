@@ -21,7 +21,7 @@ NAN_MODULE_INIT(Person::Init) {
 
   Nan::SetPrototypeMethod(tpl, "sayCallback", SayCallback);
   Nan::SetPrototypeMethod(tpl, "say", Say);
-  constructor.Reset(tpl->GetFunction());
+  constructor.Reset(Nan::GetFunction(tpl).ToLocalChecked());
 }
 
 NAN_METHOD(Person::New){
@@ -111,7 +111,7 @@ NAN_METHOD(Person::Say){
 
   Person* person = ObjectWrap::Unwrap<Person>(info.Holder());
 
-  v8::Local<v8::Promise::Resolver> resolver = v8::Promise::Resolver::New(info.GetIsolate());
+  v8::Local<v8::Promise::Resolver> resolver = v8::Promise::Resolver::New(Nan::GetCurrentContext()).ToLocalChecked();
   Nan::Persistent<v8::Promise::Resolver> *persistent = new Nan::Persistent<v8::Promise::Resolver>(resolver);
 
   SayWorker *sw = new SayWorker(persistent, person->_name, what);

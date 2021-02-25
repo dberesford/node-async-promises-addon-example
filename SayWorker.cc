@@ -17,7 +17,7 @@ void SayWorker::Execute () {
 void SayWorker::HandleOKCallback () {
   Nan::HandleScope scope;
   auto resolver = Nan::New(*_persistent);
-  resolver->Resolve(Nan::New(_result).ToLocalChecked());
+  resolver->Resolve(Nan::GetCurrentContext(), Nan::New(_result).ToLocalChecked());
 }
 
 
