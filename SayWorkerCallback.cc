@@ -17,5 +17,5 @@ void SayWorkerCallback::HandleOKCallback () {
   Nan::HandleScope scope;
   v8::Local<v8::Value> argv[2] = { Nan::Null(), Nan::Null() };
   argv[1] = Nan::New<v8::String>(_result).ToLocalChecked();
-  callback->Call(2, argv);
+  callback->Call(2, argv, async_resource);
 }

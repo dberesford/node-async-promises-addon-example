@@ -13,7 +13,7 @@
     "url": "git://github.com/dberesford/TODO.git"
   },
   "dependencies": {
-    "nan": "2.8.0"
+    "nan": "^2.14.2"
   },
   "devDependencies": {
     "snazzy": "7.0.0",
